@@ -1,0 +1,1640 @@
+.
+├── app
+│   ├── data
+│   │   ├── bash-completion
+│   │   │   └── scrcpy
+│   │   ├── icon.ico
+│   │   ├── icon.png
+│   │   ├── icon.svg
+│   │   ├── open_a_terminal_here.bat
+│   │   ├── scrcpy-console.bat
+│   │   ├── scrcpy-console.desktop
+│   │   ├── scrcpy.desktop
+│   │   ├── scrcpy-noconsole.vbs
+│   │   └── zsh-completion
+│   │       └── _scrcpy
+│   ├── deps
+│   │   ├── adb_linux.sh
+│   │   ├── adb_macos.sh
+│   │   ├── adb_windows.sh
+│   │   ├── common
+│   │   ├── dav1d.sh
+│   │   ├── ffmpeg.sh
+│   │   ├── libusb.sh
+│   │   ├── README
+│   │   └── sdl.sh
+│   ├── meson.build
+│   ├── scrcpy.1
+│   ├── scrcpy-windows.manifest
+│   ├── scrcpy-windows.rc
+│   ├── src
+│   │   ├── adb
+│   │   │   ├── adb.c
+│   │   │   ├── adb_device.c
+│   │   │   ├── adb_device.h
+│   │   │   ├── adb.h
+│   │   │   ├── adb_parser.c
+│   │   │   ├── adb_parser.h
+│   │   │   ├── adb_tunnel.c
+│   │   │   └── adb_tunnel.h
+│   │   ├── android
+│   │   │   ├── input.h
+│   │   │   └── keycodes.h
+│   │   ├── audio_player.c
+│   │   ├── audio_player.h
+│   │   ├── audio_regulator.c
+│   │   ├── audio_regulator.h
+│   │   ├── cli.c
+│   │   ├── cli.h
+│   │   ├── clock.c
+│   │   ├── clock.h
+│   │   ├── common.h
+│   │   ├── compat.c
+│   │   ├── compat.h
+│   │   ├── controller.c
+│   │   ├── controller.h
+│   │   ├── control_msg.c
+│   │   ├── control_msg.h
+│   │   ├── coords.h
+│   │   ├── decoder.c
+│   │   ├── decoder.h
+│   │   ├── delay_buffer.c
+│   │   ├── delay_buffer.h
+│   │   ├── demuxer.c
+│   │   ├── demuxer.h
+│   │   ├── device_msg.c
+│   │   ├── device_msg.h
+│   │   ├── display.c
+│   │   ├── display.h
+│   │   ├── events.c
+│   │   ├── events.h
+│   │   ├── file_pusher.c
+│   │   ├── file_pusher.h
+│   │   ├── fps_counter.c
+│   │   ├── fps_counter.h
+│   │   ├── frame_buffer.c
+│   │   ├── frame_buffer.h
+│   │   ├── hid
+│   │   │   ├── hid_event.h
+│   │   │   ├── hid_gamepad.c
+│   │   │   ├── hid_gamepad.h
+│   │   │   ├── hid_keyboard.c
+│   │   │   ├── hid_keyboard.h
+│   │   │   ├── hid_mouse.c
+│   │   │   └── hid_mouse.h
+│   │   ├── icon.c
+│   │   ├── icon.h
+│   │   ├── input_events.h
+│   │   ├── input_manager.c
+│   │   ├── input_manager.h
+│   │   ├── keyboard_sdk.c
+│   │   ├── keyboard_sdk.h
+│   │   ├── main.c
+│   │   ├── mouse_capture.c
+│   │   ├── mouse_capture.h
+│   │   ├── mouse_sdk.c
+│   │   ├── mouse_sdk.h
+│   │   ├── opengl.c
+│   │   ├── opengl.h
+│   │   ├── options.c
+│   │   ├── options.h
+│   │   ├── packet_merger.c
+│   │   ├── packet_merger.h
+│   │   ├── receiver.c
+│   │   ├── receiver.h
+│   │   ├── recorder.c
+│   │   ├── recorder.h
+│   │   ├── scrcpy.c
+│   │   ├── scrcpy.h
+│   │   ├── screen.c
+│   │   ├── screen.h
+│   │   ├── server.c
+│   │   ├── server.h
+│   │   ├── shortcut_mod.h
+│   │   ├── sys
+│   │   │   ├── unix
+│   │   │   │   ├── file.c
+│   │   │   │   └── process.c
+│   │   │   └── win
+│   │   │       ├── file.c
+│   │   │       └── process.c
+│   │   ├── trait
+│   │   │   ├── frame_sink.h
+│   │   │   ├── frame_source.c
+│   │   │   ├── frame_source.h
+│   │   │   ├── gamepad_processor.h
+│   │   │   ├── key_processor.h
+│   │   │   ├── mouse_processor.h
+│   │   │   ├── packet_sink.h
+│   │   │   ├── packet_source.c
+│   │   │   └── packet_source.h
+│   │   ├── uhid
+│   │   │   ├── gamepad_uhid.c
+│   │   │   ├── gamepad_uhid.h
+│   │   │   ├── keyboard_uhid.c
+│   │   │   ├── keyboard_uhid.h
+│   │   │   ├── mouse_uhid.c
+│   │   │   ├── mouse_uhid.h
+│   │   │   ├── uhid_output.c
+│   │   │   └── uhid_output.h
+│   │   ├── usb
+│   │   │   ├── aoa_hid.c
+│   │   │   ├── aoa_hid.h
+│   │   │   ├── gamepad_aoa.c
+│   │   │   ├── gamepad_aoa.h
+│   │   │   ├── keyboard_aoa.c
+│   │   │   ├── keyboard_aoa.h
+│   │   │   ├── mouse_aoa.c
+│   │   │   ├── mouse_aoa.h
+│   │   │   ├── scrcpy_otg.c
+│   │   │   ├── scrcpy_otg.h
+│   │   │   ├── screen_otg.c
+│   │   │   ├── screen_otg.h
+│   │   │   ├── usb.c
+│   │   │   └── usb.h
+│   │   ├── util
+│   │   │   ├── acksync.c
+│   │   │   ├── acksync.h
+│   │   │   ├── audiobuf.c
+│   │   │   ├── audiobuf.h
+│   │   │   ├── average.c
+│   │   │   ├── average.h
+│   │   │   ├── binary.h
+│   │   │   ├── env.c
+│   │   │   ├── env.h
+│   │   │   ├── file.c
+│   │   │   ├── file.h
+│   │   │   ├── intmap.c
+│   │   │   ├── intmap.h
+│   │   │   ├── intr.c
+│   │   │   ├── intr.h
+│   │   │   ├── log.c
+│   │   │   ├── log.h
+│   │   │   ├── memory.c
+│   │   │   ├── memory.h
+│   │   │   ├── net.c
+│   │   │   ├── net.h
+│   │   │   ├── net_intr.c
+│   │   │   ├── net_intr.h
+│   │   │   ├── process.c
+│   │   │   ├── process.h
+│   │   │   ├── process_intr.c
+│   │   │   ├── process_intr.h
+│   │   │   ├── rand.c
+│   │   │   ├── rand.h
+│   │   │   ├── strbuf.c
+│   │   │   ├── strbuf.h
+│   │   │   ├── str.c
+│   │   │   ├── str.h
+│   │   │   ├── term.c
+│   │   │   ├── term.h
+│   │   │   ├── thread.c
+│   │   │   ├── thread.h
+│   │   │   ├── tick.c
+│   │   │   ├── tick.h
+│   │   │   ├── timeout.c
+│   │   │   ├── timeout.h
+│   │   │   ├── vecdeque.h
+│   │   │   └── vector.h
+│   │   ├── v4l2_sink.c
+│   │   ├── v4l2_sink.h
+│   │   ├── version.c
+│   │   └── version.h
+│   └── tests
+│       ├── test_adb_parser.c
+│       ├── test_audiobuf.c
+│       ├── test_binary.c
+│       ├── test_cli.c
+│       ├── test_control_msg_serialize.c
+│       ├── test_device_msg_deserialize.c
+│       ├── test_orientation.c
+│       ├── test_strbuf.c
+│       ├── test_str.c
+│       ├── test_vecdeque.c
+│       └── test_vector.c
+├── assets
+│   └── screenshot-debian-600.jpg
+├── a.txt
+├── build.gradle
+├── bump_version
+├── config
+│   ├── android-checkstyle.gradle
+│   └── checkstyle
+│       └── checkstyle.xml
+├── cross_win32.txt
+├── cross_win64.txt
+├── doc
+│   ├── audio.md
+│   ├── build.md
+│   ├── camera.md
+│   ├── connection.md
+│   ├── control.md
+│   ├── develop.md
+│   ├── device.md
+│   ├── gamepad.md
+│   ├── keyboard.md
+│   ├── linux.md
+│   ├── macos.md
+│   ├── mouse.md
+│   ├── otg.md
+│   ├── recording.md
+│   ├── shortcuts.md
+│   ├── tunnels.md
+│   ├── v4l2.md
+│   ├── video.md
+│   ├── virtual_display.md
+│   ├── window.md
+│   └── windows.md
+├── FAQ.md
+├── gradle
+│   └── wrapper
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── install_release.sh
+├── LICENSE
+├── local.properties
+├── meson.build
+├── meson_options.txt
+├── README.md
+├── release
+│   ├── build_common
+│   ├── build_linux.sh
+│   ├── build_macos.sh
+│   ├── build_server.sh
+│   ├── build_windows.sh
+│   ├── generate_checksums.sh
+│   ├── package_client.sh
+│   ├── package_server.sh
+│   ├── release.sh
+│   ├── test_client.sh
+│   └── test_server.sh
+├── run
+├── server
+│   ├── build
+│   │   ├── generated
+│   │   │   ├── aidl_source_output_dir
+│   │   │   │   ├── debug
+│   │   │   │   │   └── out
+│   │   │   │   │       └── android
+│   │   │   │   │           ├── content
+│   │   │   │   │           │   └── IOnPrimaryClipChangedListener.java
+│   │   │   │   │           └── view
+│   │   │   │   │               ├── IDisplayFoldListener.java
+│   │   │   │   │               ├── IDisplayWindowListener.java
+│   │   │   │   │               └── IRotationWatcher.java
+│   │   │   │   └── release
+│   │   │   │       └── out
+│   │   │   │           └── android
+│   │   │   │               ├── content
+│   │   │   │               │   └── IOnPrimaryClipChangedListener.java
+│   │   │   │               └── view
+│   │   │   │                   ├── IDisplayFoldListener.java
+│   │   │   │                   ├── IDisplayWindowListener.java
+│   │   │   │                   └── IRotationWatcher.java
+│   │   │   ├── ap_generated_sources
+│   │   │   │   ├── debug
+│   │   │   │   │   └── out
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── out
+│   │   │   │   ├── debugUnitTest
+│   │   │   │   │   └── out
+│   │   │   │   ├── release
+│   │   │   │   │   └── out
+│   │   │   │   └── releaseUnitTest
+│   │   │   │       └── out
+│   │   │   ├── res
+│   │   │   │   ├── pngs
+│   │   │   │   │   ├── debug
+│   │   │   │   │   └── release
+│   │   │   │   └── resValues
+│   │   │   │       ├── androidTest
+│   │   │   │       │   └── debug
+│   │   │   │       ├── debug
+│   │   │   │       └── release
+│   │   │   └── source
+│   │   │       └── buildConfig
+│   │   │           ├── androidTest
+│   │   │           │   └── debug
+│   │   │           │       └── com
+│   │   │           │           └── genymobile
+│   │   │           │               └── scrcpy
+│   │   │           │                   └── test
+│   │   │           │                       └── BuildConfig.java
+│   │   │           ├── debug
+│   │   │           │   └── com
+│   │   │           │       └── genymobile
+│   │   │           │           └── scrcpy
+│   │   │           │               └── BuildConfig.java
+│   │   │           └── release
+│   │   │               └── com
+│   │   │                   └── genymobile
+│   │   │                       └── scrcpy
+│   │   │                           └── BuildConfig.java
+│   │   ├── intermediates
+│   │   │   ├── aar_metadata_check
+│   │   │   │   ├── debug
+│   │   │   │   │   └── checkDebugAarMetadata
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── checkDebugAndroidTestAarMetadata
+│   │   │   │   └── release
+│   │   │   │       └── checkReleaseAarMetadata
+│   │   │   ├── android_test_lint_model
+│   │   │   │   └── debug
+│   │   │   │       └── generateDebugAndroidTestLintModel
+│   │   │   │           ├── debug-artifact-dependencies.xml
+│   │   │   │           ├── debug-artifact-libraries.xml
+│   │   │   │           ├── debug.xml
+│   │   │   │           └── module.xml
+│   │   │   ├── android_test_lint_partial_results
+│   │   │   │   └── debug
+│   │   │   │       └── lintAnalyzeDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   │               └── lint-partial.xml
+│   │   │   ├── annotation_processor_list
+│   │   │   │   ├── debug
+│   │   │   │   │   └── javaPreCompileDebug
+│   │   │   │   │       └── annotationProcessors.json
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── javaPreCompileDebugAndroidTest
+│   │   │   │   │       └── annotationProcessors.json
+│   │   │   │   ├── debugUnitTest
+│   │   │   │   │   └── javaPreCompileDebugUnitTest
+│   │   │   │   │       └── annotationProcessors.json
+│   │   │   │   ├── release
+│   │   │   │   │   └── javaPreCompileRelease
+│   │   │   │   │       └── annotationProcessors.json
+│   │   │   │   └── releaseUnitTest
+│   │   │   │       └── javaPreCompileReleaseUnitTest
+│   │   │   │           └── annotationProcessors.json
+│   │   │   ├── apk_ide_redirect_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── createDebugApkListingFileRedirect
+│   │   │   │   │       └── redirect.txt
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── createDebugAndroidTestApkListingFileRedirect
+│   │   │   │           └── redirect.txt
+│   │   │   ├── app_metadata
+│   │   │   │   └── debug
+│   │   │   │       └── writeDebugAppMetadata
+│   │   │   │           └── app-metadata.properties
+│   │   │   ├── assets
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugAssets
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── mergeDebugAndroidTestAssets
+│   │   │   ├── compatible_screen_manifest
+│   │   │   │   ├── debug
+│   │   │   │   │   └── createDebugCompatibleScreenManifests
+│   │   │   │   │       └── output-metadata.json
+│   │   │   │   └── release
+│   │   │   │       └── createReleaseCompatibleScreenManifests
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── compile_and_runtime_not_namespaced_r_class_jar
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   │       └── R.jar
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestResources
+│   │   │   │   │       └── R.jar
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── R.jar
+│   │   │   ├── compile_app_classes_jar
+│   │   │   │   ├── debug
+│   │   │   │   │   └── bundleDebugClassesToCompileJar
+│   │   │   │   │       └── classes.jar
+│   │   │   │   └── release
+│   │   │   │       └── bundleReleaseClassesToCompileJar
+│   │   │   │           └── classes.jar
+│   │   │   ├── compressed_assets
+│   │   │   │   ├── debug
+│   │   │   │   │   └── compressDebugAssets
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── compressDebugAndroidTestAssets
+│   │   │   │           └── out
+│   │   │   ├── data_binding_layout_info_type_merge
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugResources
+│   │   │   │   │       └── out
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── mergeDebugAndroidTestResources
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           └── out
+│   │   │   ├── data_binding_layout_info_type_package
+│   │   │   │   ├── debug
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── packageReleaseResources
+│   │   │   │           └── out
+│   │   │   ├── default_proguard_files
+│   │   │   │   └── global
+│   │   │   │       ├── proguard-android-optimize.txt-8.8.1
+│   │   │   │       ├── proguard-android.txt-8.8.1
+│   │   │   │       └── proguard-defaults.txt-8.8.1
+│   │   │   ├── desugar_graph
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── currentProject
+│   │   │   │   │           │   ├── dirs_bucket_0
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── dirs_bucket_1
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── dirs_bucket_2
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── dirs_bucket_3
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── dirs_bucket_4
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── dirs_bucket_5
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── jar_3d6f2006238278c305b59669f831c1e28d0c766b076ccdf738120ee031b34d91_bucket_0
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── jar_3d6f2006238278c305b59669f831c1e28d0c766b076ccdf738120ee031b34d91_bucket_1
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── jar_3d6f2006238278c305b59669f831c1e28d0c766b076ccdf738120ee031b34d91_bucket_2
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── jar_3d6f2006238278c305b59669f831c1e28d0c766b076ccdf738120ee031b34d91_bucket_3
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   ├── jar_3d6f2006238278c305b59669f831c1e28d0c766b076ccdf738120ee031b34d91_bucket_4
+│   │   │   │   │           │   │   └── graph.bin
+│   │   │   │   │           │   └── jar_3d6f2006238278c305b59669f831c1e28d0c766b076ccdf738120ee031b34d91_bucket_5
+│   │   │   │   │           │       └── graph.bin
+│   │   │   │   │           ├── externalLibs
+│   │   │   │   │           ├── mixedScopes
+│   │   │   │   │           └── otherProjects
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   │               ├── currentProject
+│   │   │   │               │   ├── dirs_bucket_0
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_1
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_2
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_3
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_4
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── dirs_bucket_5
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_f8cf8105ab27a732b84a0695edfa52f75fd89a458152b8683a113ec8e51ac8c1_bucket_0
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_f8cf8105ab27a732b84a0695edfa52f75fd89a458152b8683a113ec8e51ac8c1_bucket_1
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_f8cf8105ab27a732b84a0695edfa52f75fd89a458152b8683a113ec8e51ac8c1_bucket_2
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_f8cf8105ab27a732b84a0695edfa52f75fd89a458152b8683a113ec8e51ac8c1_bucket_3
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   ├── jar_f8cf8105ab27a732b84a0695edfa52f75fd89a458152b8683a113ec8e51ac8c1_bucket_4
+│   │   │   │               │   │   └── graph.bin
+│   │   │   │               │   └── jar_f8cf8105ab27a732b84a0695edfa52f75fd89a458152b8683a113ec8e51ac8c1_bucket_5
+│   │   │   │               │       └── graph.bin
+│   │   │   │               ├── externalLibs
+│   │   │   │               ├── mixedScopes
+│   │   │   │               └── otherProjects
+│   │   │   ├── dex
+│   │   │   │   ├── debug
+│   │   │   │   │   ├── mergeExtDexDebug
+│   │   │   │   │   ├── mergeLibDexDebug
+│   │   │   │   │   │   ├── 0
+│   │   │   │   │   │   ├── 1
+│   │   │   │   │   │   ├── 10
+│   │   │   │   │   │   ├── 11
+│   │   │   │   │   │   ├── 12
+│   │   │   │   │   │   ├── 13
+│   │   │   │   │   │   ├── 14
+│   │   │   │   │   │   ├── 15
+│   │   │   │   │   │   ├── 2
+│   │   │   │   │   │   ├── 3
+│   │   │   │   │   │   ├── 4
+│   │   │   │   │   │   ├── 5
+│   │   │   │   │   │   ├── 6
+│   │   │   │   │   │   ├── 7
+│   │   │   │   │   │   ├── 8
+│   │   │   │   │   │   └── 9
+│   │   │   │   │   └── mergeProjectDexDebug
+│   │   │   │   │       ├── 0
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 1
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 10
+│   │   │   │   │       ├── 11
+│   │   │   │   │       ├── 12
+│   │   │   │   │       ├── 13
+│   │   │   │   │       ├── 14
+│   │   │   │   │       ├── 15
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 2
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 3
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 4
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 5
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 6
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       ├── 7
+│   │   │   │   │       ├── 8
+│   │   │   │   │       │   └── classes.dex
+│   │   │   │   │       └── 9
+│   │   │   │   │           └── classes.dex
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       ├── mergeExtDexDebugAndroidTest
+│   │   │   │       ├── mergeLibDexDebugAndroidTest
+│   │   │   │       │   ├── 0
+│   │   │   │       │   ├── 1
+│   │   │   │       │   ├── 10
+│   │   │   │       │   ├── 11
+│   │   │   │       │   ├── 12
+│   │   │   │       │   ├── 13
+│   │   │   │       │   ├── 14
+│   │   │   │       │   ├── 15
+│   │   │   │       │   ├── 2
+│   │   │   │       │   ├── 3
+│   │   │   │       │   ├── 4
+│   │   │   │       │   ├── 5
+│   │   │   │       │   ├── 6
+│   │   │   │       │   ├── 7
+│   │   │   │       │   ├── 8
+│   │   │   │       │   └── 9
+│   │   │   │       └── mergeProjectDexDebugAndroidTest
+│   │   │   │           ├── 0
+│   │   │   │           │   └── classes.dex
+│   │   │   │           ├── 1
+│   │   │   │           ├── 10
+│   │   │   │           ├── 11
+│   │   │   │           ├── 12
+│   │   │   │           ├── 13
+│   │   │   │           ├── 14
+│   │   │   │           ├── 15
+│   │   │   │           ├── 2
+│   │   │   │           ├── 3
+│   │   │   │           ├── 4
+│   │   │   │           ├── 5
+│   │   │   │           ├── 6
+│   │   │   │           │   └── classes.dex
+│   │   │   │           ├── 7
+│   │   │   │           ├── 8
+│   │   │   │           └── 9
+│   │   │   ├── dex_archive_input_jar_hashes
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── dex_number_of_buckets_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── duplicate_classes_check
+│   │   │   │   ├── debug
+│   │   │   │   │   └── checkDebugDuplicateClasses
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── checkDebugAndroidTestDuplicateClasses
+│   │   │   ├── external_file_lib_dex_archives
+│   │   │   │   ├── debug
+│   │   │   │   │   └── desugarDebugFileDependencies
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── desugarDebugAndroidTestFileDependencies
+│   │   │   ├── external_libs_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── external_libs_dex_archive_with_artifact_transforms
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── incremental
+│   │   │   │   ├── debug
+│   │   │   │   │   ├── mergeDebugResources
+│   │   │   │   │   │   ├── compile-file-map.properties
+│   │   │   │   │   │   ├── merged.dir
+│   │   │   │   │   │   ├── merger.xml
+│   │   │   │   │   │   └── stripped.dir
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   │       ├── compile-file-map.properties
+│   │   │   │   │       ├── merged.dir
+│   │   │   │   │       ├── merger.xml
+│   │   │   │   │       └── stripped.dir
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── mergeDebugAndroidTestResources
+│   │   │   │   │       ├── compile-file-map.properties
+│   │   │   │   │       ├── merged.dir
+│   │   │   │   │       ├── merger.xml
+│   │   │   │   │       └── stripped.dir
+│   │   │   │   ├── debugAndroidTest-mergeJavaRes
+│   │   │   │   │   ├── merge-state
+│   │   │   │   │   └── zip-cache
+│   │   │   │   ├── debug-mergeJavaRes
+│   │   │   │   │   ├── merge-state
+│   │   │   │   │   └── zip-cache
+│   │   │   │   ├── lintAnalyzeDebug
+│   │   │   │   │   ├── debug-artifact-dependencies.xml
+│   │   │   │   │   ├── debug-artifact-libraries.xml
+│   │   │   │   │   ├── debug.xml
+│   │   │   │   │   └── module.xml
+│   │   │   │   ├── lintAnalyzeDebugAndroidTest
+│   │   │   │   │   ├── debug-artifact-dependencies.xml
+│   │   │   │   │   ├── debug-artifact-libraries.xml
+│   │   │   │   │   ├── debug.xml
+│   │   │   │   │   └── module.xml
+│   │   │   │   ├── lintAnalyzeDebugUnitTest
+│   │   │   │   │   ├── debug-artifact-dependencies.xml
+│   │   │   │   │   ├── debug-artifact-libraries.xml
+│   │   │   │   │   ├── debug.xml
+│   │   │   │   │   └── module.xml
+│   │   │   │   ├── mergeDebugAndroidTestAssets
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugAndroidTestJniLibFolders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugAndroidTestShaders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugAssets
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugJniLibFolders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── mergeDebugShaders
+│   │   │   │   │   └── merger.xml
+│   │   │   │   ├── packageDebug
+│   │   │   │   │   └── tmp
+│   │   │   │   │       └── debug
+│   │   │   │   │           ├── dex-renamer-state.txt
+│   │   │   │   │           └── zip-cache
+│   │   │   │   │               ├── androidResources
+│   │   │   │   │               └── javaResources0
+│   │   │   │   ├── packageDebugAndroidTest
+│   │   │   │   │   └── tmp
+│   │   │   │   │       └── debugAndroidTest
+│   │   │   │   │           ├── dex-renamer-state.txt
+│   │   │   │   │           └── zip-cache
+│   │   │   │   │               ├── androidResources
+│   │   │   │   │               └── javaResources0
+│   │   │   │   └── release
+│   │   │   │       ├── mergeReleaseResources
+│   │   │   │       │   ├── compile-file-map.properties
+│   │   │   │       │   ├── merged.dir
+│   │   │   │       │   ├── merger.xml
+│   │   │   │       │   └── stripped.dir
+│   │   │   │       └── packageReleaseResources
+│   │   │   │           ├── compile-file-map.properties
+│   │   │   │           ├── merged.dir
+│   │   │   │           ├── merger.xml
+│   │   │   │           └── stripped.dir
+│   │   │   ├── javac
+│   │   │   │   ├── debug
+│   │   │   │   │   └── compileDebugJavaWithJavac
+│   │   │   │   │       └── classes
+│   │   │   │   │           ├── android
+│   │   │   │   │           │   ├── content
+│   │   │   │   │           │   │   ├── IContentProvider.class
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Default.class
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Stub$Proxy.class
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Stub.class
+│   │   │   │   │           │   │   └── IOnPrimaryClipChangedListener.class
+│   │   │   │   │           │   └── view
+│   │   │   │   │           │       ├── IDisplayFoldListener$Default.class
+│   │   │   │   │           │       ├── IDisplayFoldListener$Stub$Proxy.class
+│   │   │   │   │           │       ├── IDisplayFoldListener$Stub.class
+│   │   │   │   │           │       ├── IDisplayFoldListener.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$Default.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$_Parcel.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$Stub$Proxy.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$Stub.class
+│   │   │   │   │           │       ├── IDisplayWindowListener.class
+│   │   │   │   │           │       ├── IRotationWatcher$Default.class
+│   │   │   │   │           │       ├── IRotationWatcher$Stub$Proxy.class
+│   │   │   │   │           │       ├── IRotationWatcher$Stub.class
+│   │   │   │   │           │       └── IRotationWatcher.class
+│   │   │   │   │           └── com
+│   │   │   │   │               └── genymobile
+│   │   │   │   │                   └── scrcpy
+│   │   │   │   │                       ├── AndroidVersions.class
+│   │   │   │   │                       ├── AsyncProcessor$TerminationListener.class
+│   │   │   │   │                       ├── AsyncProcessor.class
+│   │   │   │   │                       ├── audio
+│   │   │   │   │                       │   ├── AudioCapture.class
+│   │   │   │   │                       │   ├── AudioCaptureException.class
+│   │   │   │   │                       │   ├── AudioCodec.class
+│   │   │   │   │                       │   ├── AudioConfig.class
+│   │   │   │   │                       │   ├── AudioDirectCapture$1.class
+│   │   │   │   │                       │   ├── AudioDirectCapture.class
+│   │   │   │   │                       │   ├── AudioEncoder$1.class
+│   │   │   │   │                       │   ├── AudioEncoder$EncoderCallback.class
+│   │   │   │   │                       │   ├── AudioEncoder$InputTask.class
+│   │   │   │   │                       │   ├── AudioEncoder$OutputTask.class
+│   │   │   │   │                       │   ├── AudioEncoder.class
+│   │   │   │   │                       │   ├── AudioPlaybackCapture.class
+│   │   │   │   │                       │   ├── AudioRawRecorder.class
+│   │   │   │   │                       │   ├── AudioRecordReader.class
+│   │   │   │   │                       │   └── AudioSource.class
+│   │   │   │   │                       ├── BuildConfig.class
+│   │   │   │   │                       ├── CleanUp.class
+│   │   │   │   │                       ├── control
+│   │   │   │   │                       │   ├── ControlChannel.class
+│   │   │   │   │                       │   ├── Controller$1.class
+│   │   │   │   │                       │   ├── Controller$DisplayData.class
+│   │   │   │   │                       │   ├── Controller.class
+│   │   │   │   │                       │   ├── ControlMessage.class
+│   │   │   │   │                       │   ├── ControlMessageReader.class
+│   │   │   │   │                       │   ├── ControlProtocolException.class
+│   │   │   │   │                       │   ├── DeviceMessage.class
+│   │   │   │   │                       │   ├── DeviceMessageSender.class
+│   │   │   │   │                       │   ├── DeviceMessageWriter.class
+│   │   │   │   │                       │   ├── KeyComposition.class
+│   │   │   │   │                       │   ├── Pointer.class
+│   │   │   │   │                       │   ├── PointersState.class
+│   │   │   │   │                       │   ├── PositionMapper.class
+│   │   │   │   │                       │   └── UhidManager.class
+│   │   │   │   │                       ├── device
+│   │   │   │   │                       │   ├── ConfigurationException.class
+│   │   │   │   │                       │   ├── DesktopConnection.class
+│   │   │   │   │                       │   ├── DeviceApp.class
+│   │   │   │   │                       │   ├── Device.class
+│   │   │   │   │                       │   ├── DisplayInfo.class
+│   │   │   │   │                       │   ├── NewDisplay.class
+│   │   │   │   │                       │   ├── Orientation$Lock.class
+│   │   │   │   │                       │   ├── Orientation.class
+│   │   │   │   │                       │   ├── Point.class
+│   │   │   │   │                       │   ├── Position.class
+│   │   │   │   │                       │   ├── Size.class
+│   │   │   │   │                       │   └── Streamer.class
+│   │   │   │   │                       ├── FakeContext$1.class
+│   │   │   │   │                       ├── FakeContext.class
+│   │   │   │   │                       ├── opengl
+│   │   │   │   │                       │   ├── AffineOpenGLFilter.class
+│   │   │   │   │                       │   ├── GLUtils.class
+│   │   │   │   │                       │   ├── OpenGLException.class
+│   │   │   │   │                       │   ├── OpenGLFilter.class
+│   │   │   │   │                       │   └── OpenGLRunner.class
+│   │   │   │   │                       ├── Options.class
+│   │   │   │   │                       ├── Server$Completion.class
+│   │   │   │   │                       ├── Server.class
+│   │   │   │   │                       ├── util
+│   │   │   │   │                       │   ├── AffineMatrix.class
+│   │   │   │   │                       │   ├── Binary.class
+│   │   │   │   │                       │   ├── Codec$Type.class
+│   │   │   │   │                       │   ├── Codec.class
+│   │   │   │   │                       │   ├── CodecOption.class
+│   │   │   │   │                       │   ├── CodecUtils.class
+│   │   │   │   │                       │   ├── Command.class
+│   │   │   │   │                       │   ├── HandlerExecutor.class
+│   │   │   │   │                       │   ├── IO.class
+│   │   │   │   │                       │   ├── Ln$Level.class
+│   │   │   │   │                       │   ├── Ln$NullOutputStream.class
+│   │   │   │   │                       │   ├── Ln.class
+│   │   │   │   │                       │   ├── LogUtils.class
+│   │   │   │   │                       │   ├── Settings.class
+│   │   │   │   │                       │   ├── SettingsException.class
+│   │   │   │   │                       │   └── StringUtils.class
+│   │   │   │   │                       ├── video
+│   │   │   │   │                       │   ├── CameraAspectRatio.class
+│   │   │   │   │                       │   ├── CameraCapture$1.class
+│   │   │   │   │                       │   ├── CameraCapture$2.class
+│   │   │   │   │                       │   ├── CameraCapture$3.class
+│   │   │   │   │                       │   ├── CameraCapture.class
+│   │   │   │   │                       │   ├── CameraFacing.class
+│   │   │   │   │                       │   ├── CaptureReset.class
+│   │   │   │   │                       │   ├── DisplaySizeMonitor$1.class
+│   │   │   │   │                       │   ├── DisplaySizeMonitor$Listener.class
+│   │   │   │   │                       │   ├── DisplaySizeMonitor.class
+│   │   │   │   │                       │   ├── NewDisplayCapture.class
+│   │   │   │   │                       │   ├── ScreenCapture.class
+│   │   │   │   │                       │   ├── SurfaceCapture$CaptureListener.class
+│   │   │   │   │                       │   ├── SurfaceCapture.class
+│   │   │   │   │                       │   ├── SurfaceEncoder.class
+│   │   │   │   │                       │   ├── VideoCodec.class
+│   │   │   │   │                       │   ├── VideoFilter.class
+│   │   │   │   │                       │   ├── VideoSource.class
+│   │   │   │   │                       │   └── VirtualDisplayListener.class
+│   │   │   │   │                       ├── Workarounds.class
+│   │   │   │   │                       └── wrappers
+│   │   │   │   │                           ├── ActivityManager.class
+│   │   │   │   │                           ├── ClipboardManager.class
+│   │   │   │   │                           ├── ContentProvider.class
+│   │   │   │   │                           ├── DisplayControl.class
+│   │   │   │   │                           ├── DisplayManager$1.class
+│   │   │   │   │                           ├── DisplayManager$DisplayListener.class
+│   │   │   │   │                           ├── DisplayManager$DisplayListenerHandle.class
+│   │   │   │   │                           ├── DisplayManager.class
+│   │   │   │   │                           ├── DisplayWindowListener.class
+│   │   │   │   │                           ├── InputManager.class
+│   │   │   │   │                           ├── PowerManager.class
+│   │   │   │   │                           ├── ServiceManager.class
+│   │   │   │   │                           ├── StatusBarManager.class
+│   │   │   │   │                           ├── SurfaceControl.class
+│   │   │   │   │                           └── WindowManager.class
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── compileDebugAndroidTestJavaWithJavac
+│   │   │   │   │       └── classes
+│   │   │   │   │           └── com
+│   │   │   │   │               └── genymobile
+│   │   │   │   │                   └── scrcpy
+│   │   │   │   │                       └── test
+│   │   │   │   │                           └── BuildConfig.class
+│   │   │   │   ├── debugUnitTest
+│   │   │   │   │   └── compileDebugUnitTestJavaWithJavac
+│   │   │   │   │       └── classes
+│   │   │   │   │           └── com
+│   │   │   │   │               └── genymobile
+│   │   │   │   │                   └── scrcpy
+│   │   │   │   │                       ├── control
+│   │   │   │   │                       │   ├── ControlMessageReaderTest.class
+│   │   │   │   │                       │   └── DeviceMessageWriterTest.class
+│   │   │   │   │                       └── util
+│   │   │   │   │                           ├── BinaryTest.class
+│   │   │   │   │                           ├── CodecOptionsTest.class
+│   │   │   │   │                           ├── CommandParserTest.class
+│   │   │   │   │                           └── StringUtilsTest.class
+│   │   │   │   ├── release
+│   │   │   │   │   └── compileReleaseJavaWithJavac
+│   │   │   │   │       └── classes
+│   │   │   │   │           ├── android
+│   │   │   │   │           │   ├── content
+│   │   │   │   │           │   │   ├── IContentProvider.class
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Default.class
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Stub$Proxy.class
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Stub.class
+│   │   │   │   │           │   │   └── IOnPrimaryClipChangedListener.class
+│   │   │   │   │           │   └── view
+│   │   │   │   │           │       ├── IDisplayFoldListener$Default.class
+│   │   │   │   │           │       ├── IDisplayFoldListener$Stub$Proxy.class
+│   │   │   │   │           │       ├── IDisplayFoldListener$Stub.class
+│   │   │   │   │           │       ├── IDisplayFoldListener.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$Default.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$_Parcel.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$Stub$Proxy.class
+│   │   │   │   │           │       ├── IDisplayWindowListener$Stub.class
+│   │   │   │   │           │       ├── IDisplayWindowListener.class
+│   │   │   │   │           │       ├── IRotationWatcher$Default.class
+│   │   │   │   │           │       ├── IRotationWatcher$Stub$Proxy.class
+│   │   │   │   │           │       ├── IRotationWatcher$Stub.class
+│   │   │   │   │           │       └── IRotationWatcher.class
+│   │   │   │   │           └── com
+│   │   │   │   │               └── genymobile
+│   │   │   │   │                   └── scrcpy
+│   │   │   │   │                       ├── AndroidVersions.class
+│   │   │   │   │                       ├── AsyncProcessor$TerminationListener.class
+│   │   │   │   │                       ├── AsyncProcessor.class
+│   │   │   │   │                       ├── audio
+│   │   │   │   │                       │   ├── AudioCapture.class
+│   │   │   │   │                       │   ├── AudioCaptureException.class
+│   │   │   │   │                       │   ├── AudioCodec.class
+│   │   │   │   │                       │   ├── AudioConfig.class
+│   │   │   │   │                       │   ├── AudioDirectCapture$1.class
+│   │   │   │   │                       │   ├── AudioDirectCapture.class
+│   │   │   │   │                       │   ├── AudioEncoder$1.class
+│   │   │   │   │                       │   ├── AudioEncoder$EncoderCallback.class
+│   │   │   │   │                       │   ├── AudioEncoder$InputTask.class
+│   │   │   │   │                       │   ├── AudioEncoder$OutputTask.class
+│   │   │   │   │                       │   ├── AudioEncoder.class
+│   │   │   │   │                       │   ├── AudioPlaybackCapture.class
+│   │   │   │   │                       │   ├── AudioRawRecorder.class
+│   │   │   │   │                       │   ├── AudioRecordReader.class
+│   │   │   │   │                       │   └── AudioSource.class
+│   │   │   │   │                       ├── BuildConfig.class
+│   │   │   │   │                       ├── CleanUp.class
+│   │   │   │   │                       ├── control
+│   │   │   │   │                       │   ├── ControlChannel.class
+│   │   │   │   │                       │   ├── Controller$1.class
+│   │   │   │   │                       │   ├── Controller$DisplayData.class
+│   │   │   │   │                       │   ├── Controller.class
+│   │   │   │   │                       │   ├── ControlMessage.class
+│   │   │   │   │                       │   ├── ControlMessageReader.class
+│   │   │   │   │                       │   ├── ControlProtocolException.class
+│   │   │   │   │                       │   ├── DeviceMessage.class
+│   │   │   │   │                       │   ├── DeviceMessageSender.class
+│   │   │   │   │                       │   ├── DeviceMessageWriter.class
+│   │   │   │   │                       │   ├── KeyComposition.class
+│   │   │   │   │                       │   ├── Pointer.class
+│   │   │   │   │                       │   ├── PointersState.class
+│   │   │   │   │                       │   ├── PositionMapper.class
+│   │   │   │   │                       │   └── UhidManager.class
+│   │   │   │   │                       ├── device
+│   │   │   │   │                       │   ├── ConfigurationException.class
+│   │   │   │   │                       │   ├── DesktopConnection.class
+│   │   │   │   │                       │   ├── DeviceApp.class
+│   │   │   │   │                       │   ├── Device.class
+│   │   │   │   │                       │   ├── DisplayInfo.class
+│   │   │   │   │                       │   ├── NewDisplay.class
+│   │   │   │   │                       │   ├── Orientation$Lock.class
+│   │   │   │   │                       │   ├── Orientation.class
+│   │   │   │   │                       │   ├── Point.class
+│   │   │   │   │                       │   ├── Position.class
+│   │   │   │   │                       │   ├── Size.class
+│   │   │   │   │                       │   └── Streamer.class
+│   │   │   │   │                       ├── FakeContext$1.class
+│   │   │   │   │                       ├── FakeContext.class
+│   │   │   │   │                       ├── opengl
+│   │   │   │   │                       │   ├── AffineOpenGLFilter.class
+│   │   │   │   │                       │   ├── GLUtils.class
+│   │   │   │   │                       │   ├── OpenGLException.class
+│   │   │   │   │                       │   ├── OpenGLFilter.class
+│   │   │   │   │                       │   └── OpenGLRunner.class
+│   │   │   │   │                       ├── Options.class
+│   │   │   │   │                       ├── Server$Completion.class
+│   │   │   │   │                       ├── Server.class
+│   │   │   │   │                       ├── util
+│   │   │   │   │                       │   ├── AffineMatrix.class
+│   │   │   │   │                       │   ├── Binary.class
+│   │   │   │   │                       │   ├── Codec$Type.class
+│   │   │   │   │                       │   ├── Codec.class
+│   │   │   │   │                       │   ├── CodecOption.class
+│   │   │   │   │                       │   ├── CodecUtils.class
+│   │   │   │   │                       │   ├── Command.class
+│   │   │   │   │                       │   ├── HandlerExecutor.class
+│   │   │   │   │                       │   ├── IO.class
+│   │   │   │   │                       │   ├── Ln$Level.class
+│   │   │   │   │                       │   ├── Ln$NullOutputStream.class
+│   │   │   │   │                       │   ├── Ln.class
+│   │   │   │   │                       │   ├── LogUtils.class
+│   │   │   │   │                       │   ├── Settings.class
+│   │   │   │   │                       │   ├── SettingsException.class
+│   │   │   │   │                       │   └── StringUtils.class
+│   │   │   │   │                       ├── video
+│   │   │   │   │                       │   ├── CameraAspectRatio.class
+│   │   │   │   │                       │   ├── CameraCapture$1.class
+│   │   │   │   │                       │   ├── CameraCapture$2.class
+│   │   │   │   │                       │   ├── CameraCapture$3.class
+│   │   │   │   │                       │   ├── CameraCapture.class
+│   │   │   │   │                       │   ├── CameraFacing.class
+│   │   │   │   │                       │   ├── CaptureReset.class
+│   │   │   │   │                       │   ├── DisplaySizeMonitor$1.class
+│   │   │   │   │                       │   ├── DisplaySizeMonitor$Listener.class
+│   │   │   │   │                       │   ├── DisplaySizeMonitor.class
+│   │   │   │   │                       │   ├── NewDisplayCapture.class
+│   │   │   │   │                       │   ├── ScreenCapture.class
+│   │   │   │   │                       │   ├── SurfaceCapture$CaptureListener.class
+│   │   │   │   │                       │   ├── SurfaceCapture.class
+│   │   │   │   │                       │   ├── SurfaceEncoder.class
+│   │   │   │   │                       │   ├── VideoCodec.class
+│   │   │   │   │                       │   ├── VideoFilter.class
+│   │   │   │   │                       │   ├── VideoSource.class
+│   │   │   │   │                       │   └── VirtualDisplayListener.class
+│   │   │   │   │                       ├── Workarounds.class
+│   │   │   │   │                       └── wrappers
+│   │   │   │   │                           ├── ActivityManager.class
+│   │   │   │   │                           ├── ClipboardManager.class
+│   │   │   │   │                           ├── ContentProvider.class
+│   │   │   │   │                           ├── DisplayControl.class
+│   │   │   │   │                           ├── DisplayManager$1.class
+│   │   │   │   │                           ├── DisplayManager$DisplayListener.class
+│   │   │   │   │                           ├── DisplayManager$DisplayListenerHandle.class
+│   │   │   │   │                           ├── DisplayManager.class
+│   │   │   │   │                           ├── DisplayWindowListener.class
+│   │   │   │   │                           ├── InputManager.class
+│   │   │   │   │                           ├── PowerManager.class
+│   │   │   │   │                           ├── ServiceManager.class
+│   │   │   │   │                           ├── StatusBarManager.class
+│   │   │   │   │                           ├── SurfaceControl.class
+│   │   │   │   │                           └── WindowManager.class
+│   │   │   │   └── releaseUnitTest
+│   │   │   │       └── compileReleaseUnitTestJavaWithJavac
+│   │   │   │           └── classes
+│   │   │   │               └── com
+│   │   │   │                   └── genymobile
+│   │   │   │                       └── scrcpy
+│   │   │   │                           ├── control
+│   │   │   │                           │   ├── ControlMessageReaderTest.class
+│   │   │   │                           │   └── DeviceMessageWriterTest.class
+│   │   │   │                           └── util
+│   │   │   │                               ├── BinaryTest.class
+│   │   │   │                               ├── CodecOptionsTest.class
+│   │   │   │                               ├── CommandParserTest.class
+│   │   │   │                               └── StringUtilsTest.class
+│   │   │   ├── linked_resources_binary_format
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   │       ├── linked-resources-binary-format-debug.ap_
+│   │   │   │   │       └── output-metadata.json
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestResources
+│   │   │   │   │       ├── linked-resources-binary-format.ap_
+│   │   │   │   │       └── output-metadata.json
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           ├── linked-resources-binary-format-release.ap_
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── lint-cache
+│   │   │   │   ├── lintAnalyzeDebug
+│   │   │   │   │   ├── api-versions-49-35rev2.bin
+│   │   │   │   │   ├── lint-cache-version.txt
+│   │   │   │   │   ├── maven.google
+│   │   │   │   │   │   └── master-index.xml
+│   │   │   │   │   ├── private-apis-17-7541949.bin
+│   │   │   │   │   └── sdk_index
+│   │   │   │   │       └── snapshot.gz
+│   │   │   │   ├── lintAnalyzeDebugAndroidTest
+│   │   │   │   │   └── lint-cache-version.txt
+│   │   │   │   ├── lintAnalyzeDebugUnitTest
+│   │   │   │   │   └── lint-cache-version.txt
+│   │   │   │   └── lintReportDebug
+│   │   │   │       └── lint-cache-version.txt
+│   │   │   ├── lint_intermediate_text_report
+│   │   │   │   └── debug
+│   │   │   │       └── lintReportDebug
+│   │   │   │           └── lint-results-debug.txt
+│   │   │   ├── lint_partial_results
+│   │   │   │   └── debug
+│   │   │   │       └── lintAnalyzeDebug
+│   │   │   │           └── out
+│   │   │   │               ├── lint-partial.xml
+│   │   │   │               ├── lint-provisional.xml
+│   │   │   │               └── lint-resources.xml
+│   │   │   ├── lint_report_lint_model
+│   │   │   │   └── debug
+│   │   │   │       └── generateDebugLintReportModel
+│   │   │   │           ├── debug-artifact-dependencies.xml
+│   │   │   │           ├── debug-artifact-libraries.xml
+│   │   │   │           ├── debug.xml
+│   │   │   │           └── module.xml
+│   │   │   ├── lint_return_value
+│   │   │   │   └── debug
+│   │   │   │       └── lintReportDebug
+│   │   │   │           └── return-value-debug.txt
+│   │   │   ├── local_only_symbol_list
+│   │   │   │   ├── debug
+│   │   │   │   │   └── parseDebugLocalResources
+│   │   │   │   │       └── R-def.txt
+│   │   │   │   └── release
+│   │   │   │       └── parseReleaseLocalResources
+│   │   │   │           └── R-def.txt
+│   │   │   ├── manifest_merge_blame_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugMainManifest
+│   │   │   │   │       └── manifest-merger-blame-debug-report.txt
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestManifest
+│   │   │   │   │       └── manifest-merger-blame-debug-androidTest-report.txt
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseMainManifest
+│   │   │   │           └── manifest-merger-blame-release-report.txt
+│   │   │   ├── merged_java_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugJavaResource
+│   │   │   │   │       └── base.jar
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── mergeDebugAndroidTestJavaResource
+│   │   │   │           └── feature-server.jar
+│   │   │   ├── merged_jni_libs
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugJniLibFolders
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── mergeDebugAndroidTestJniLibFolders
+│   │   │   │           └── out
+│   │   │   ├── merged_manifest
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugMainManifest
+│   │   │   │   │       └── AndroidManifest.xml
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseMainManifest
+│   │   │   │           └── AndroidManifest.xml
+│   │   │   ├── merged_manifests
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugManifest
+│   │   │   │   │       ├── AndroidManifest.xml
+│   │   │   │   │       └── output-metadata.json
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseManifest
+│   │   │   │           ├── AndroidManifest.xml
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── merged_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugResources
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── mergeDebugAndroidTestResources
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   ├── merged_res_blame_folder
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugResources
+│   │   │   │   │       └── out
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── mergeDebugAndroidTestResources
+│   │   │   │   │       └── out
+│   │   │   │   └── release
+│   │   │   │       └── mergeReleaseResources
+│   │   │   │           └── out
+│   │   │   ├── merged_shaders
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mergeDebugShaders
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── mergeDebugAndroidTestShaders
+│   │   │   │           └── out
+│   │   │   ├── mixed_scope_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── navigation_json
+│   │   │   │   ├── debug
+│   │   │   │   │   └── extractDeepLinksDebug
+│   │   │   │   │       └── navigation.json
+│   │   │   │   └── release
+│   │   │   │       └── extractDeepLinksRelease
+│   │   │   │           └── navigation.json
+│   │   │   ├── nested_resources_validation_report
+│   │   │   │   ├── debug
+│   │   │   │   │   └── generateDebugResources
+│   │   │   │   │       └── nestedResourcesValidationReport.txt
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── generateDebugAndroidTestResources
+│   │   │   │   │       └── nestedResourcesValidationReport.txt
+│   │   │   │   └── release
+│   │   │   │       └── generateReleaseResources
+│   │   │   │           └── nestedResourcesValidationReport.txt
+│   │   │   ├── packaged_manifests
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugManifestForPackage
+│   │   │   │   │       ├── AndroidManifest.xml
+│   │   │   │   │       └── output-metadata.json
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestManifest
+│   │   │   │   │       ├── AndroidManifest.xml
+│   │   │   │   │       └── output-metadata.json
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseManifestForPackage
+│   │   │   │           ├── AndroidManifest.xml
+│   │   │   │           └── output-metadata.json
+│   │   │   ├── packaged_res
+│   │   │   │   ├── debug
+│   │   │   │   │   └── packageDebugResources
+│   │   │   │   └── release
+│   │   │   │       └── packageReleaseResources
+│   │   │   ├── project_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   │           ├── android
+│   │   │   │   │           │   ├── content
+│   │   │   │   │           │   │   ├── IContentProvider.dex
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Default.dex
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Stub$Proxy.dex
+│   │   │   │   │           │   │   ├── IOnPrimaryClipChangedListener$Stub.dex
+│   │   │   │   │           │   │   └── IOnPrimaryClipChangedListener.dex
+│   │   │   │   │           │   └── view
+│   │   │   │   │           │       ├── IDisplayFoldListener$Default.dex
+│   │   │   │   │           │       ├── IDisplayFoldListener$Stub$Proxy.dex
+│   │   │   │   │           │       ├── IDisplayFoldListener$Stub.dex
+│   │   │   │   │           │       ├── IDisplayFoldListener.dex
+│   │   │   │   │           │       ├── IDisplayWindowListener$Default.dex
+│   │   │   │   │           │       ├── IDisplayWindowListener$_Parcel.dex
+│   │   │   │   │           │       ├── IDisplayWindowListener$Stub$Proxy.dex
+│   │   │   │   │           │       ├── IDisplayWindowListener$Stub.dex
+│   │   │   │   │           │       ├── IDisplayWindowListener.dex
+│   │   │   │   │           │       ├── IRotationWatcher$Default.dex
+│   │   │   │   │           │       ├── IRotationWatcher$Stub$Proxy.dex
+│   │   │   │   │           │       ├── IRotationWatcher$Stub.dex
+│   │   │   │   │           │       └── IRotationWatcher.dex
+│   │   │   │   │           ├── com
+│   │   │   │   │           │   └── genymobile
+│   │   │   │   │           │       └── scrcpy
+│   │   │   │   │           │           ├── AndroidVersions.dex
+│   │   │   │   │           │           ├── AsyncProcessor$TerminationListener.dex
+│   │   │   │   │           │           ├── AsyncProcessor.dex
+│   │   │   │   │           │           ├── audio
+│   │   │   │   │           │           │   ├── AudioCapture.dex
+│   │   │   │   │           │           │   ├── AudioCaptureException.dex
+│   │   │   │   │           │           │   ├── AudioCodec.dex
+│   │   │   │   │           │           │   ├── AudioConfig.dex
+│   │   │   │   │           │           │   ├── AudioDirectCapture$1.dex
+│   │   │   │   │           │           │   ├── AudioDirectCapture.dex
+│   │   │   │   │           │           │   ├── AudioEncoder$1.dex
+│   │   │   │   │           │           │   ├── AudioEncoder$EncoderCallback.dex
+│   │   │   │   │           │           │   ├── AudioEncoder$InputTask.dex
+│   │   │   │   │           │           │   ├── AudioEncoder$OutputTask.dex
+│   │   │   │   │           │           │   ├── AudioEncoder.dex
+│   │   │   │   │           │           │   ├── AudioPlaybackCapture.dex
+│   │   │   │   │           │           │   ├── AudioRawRecorder.dex
+│   │   │   │   │           │           │   ├── AudioRecordReader.dex
+│   │   │   │   │           │           │   └── AudioSource.dex
+│   │   │   │   │           │           ├── BuildConfig.dex
+│   │   │   │   │           │           ├── CleanUp.dex
+│   │   │   │   │           │           ├── control
+│   │   │   │   │           │           │   ├── ControlChannel.dex
+│   │   │   │   │           │           │   ├── Controller$1.dex
+│   │   │   │   │           │           │   ├── Controller$DisplayData.dex
+│   │   │   │   │           │           │   ├── Controller.dex
+│   │   │   │   │           │           │   ├── ControlMessage.dex
+│   │   │   │   │           │           │   ├── ControlMessageReader.dex
+│   │   │   │   │           │           │   ├── ControlProtocolException.dex
+│   │   │   │   │           │           │   ├── DeviceMessage.dex
+│   │   │   │   │           │           │   ├── DeviceMessageSender.dex
+│   │   │   │   │           │           │   ├── DeviceMessageWriter.dex
+│   │   │   │   │           │           │   ├── KeyComposition.dex
+│   │   │   │   │           │           │   ├── Pointer.dex
+│   │   │   │   │           │           │   ├── PointersState.dex
+│   │   │   │   │           │           │   ├── PositionMapper.dex
+│   │   │   │   │           │           │   └── UhidManager.dex
+│   │   │   │   │           │           ├── device
+│   │   │   │   │           │           │   ├── ConfigurationException.dex
+│   │   │   │   │           │           │   ├── DesktopConnection.dex
+│   │   │   │   │           │           │   ├── DeviceApp.dex
+│   │   │   │   │           │           │   ├── Device.dex
+│   │   │   │   │           │           │   ├── DisplayInfo.dex
+│   │   │   │   │           │           │   ├── NewDisplay.dex
+│   │   │   │   │           │           │   ├── Orientation$Lock.dex
+│   │   │   │   │           │           │   ├── Orientation.dex
+│   │   │   │   │           │           │   ├── Point.dex
+│   │   │   │   │           │           │   ├── Position.dex
+│   │   │   │   │           │           │   ├── Size.dex
+│   │   │   │   │           │           │   └── Streamer.dex
+│   │   │   │   │           │           ├── FakeContext$1.dex
+│   │   │   │   │           │           ├── FakeContext.dex
+│   │   │   │   │           │           ├── opengl
+│   │   │   │   │           │           │   ├── AffineOpenGLFilter.dex
+│   │   │   │   │           │           │   ├── GLUtils.dex
+│   │   │   │   │           │           │   ├── OpenGLException.dex
+│   │   │   │   │           │           │   ├── OpenGLFilter.dex
+│   │   │   │   │           │           │   └── OpenGLRunner.dex
+│   │   │   │   │           │           ├── Options.dex
+│   │   │   │   │           │           ├── Server$Completion.dex
+│   │   │   │   │           │           ├── Server.dex
+│   │   │   │   │           │           ├── util
+│   │   │   │   │           │           │   ├── AffineMatrix.dex
+│   │   │   │   │           │           │   ├── Binary.dex
+│   │   │   │   │           │           │   ├── Codec$Type.dex
+│   │   │   │   │           │           │   ├── Codec.dex
+│   │   │   │   │           │           │   ├── CodecOption.dex
+│   │   │   │   │           │           │   ├── CodecUtils.dex
+│   │   │   │   │           │           │   ├── Command.dex
+│   │   │   │   │           │           │   ├── HandlerExecutor.dex
+│   │   │   │   │           │           │   ├── IO.dex
+│   │   │   │   │           │           │   ├── Ln$Level.dex
+│   │   │   │   │           │           │   ├── Ln$NullOutputStream.dex
+│   │   │   │   │           │           │   ├── Ln.dex
+│   │   │   │   │           │           │   ├── LogUtils.dex
+│   │   │   │   │           │           │   ├── Settings.dex
+│   │   │   │   │           │           │   ├── SettingsException.dex
+│   │   │   │   │           │           │   └── StringUtils.dex
+│   │   │   │   │           │           ├── video
+│   │   │   │   │           │           │   ├── CameraAspectRatio.dex
+│   │   │   │   │           │           │   ├── CameraCapture$1.dex
+│   │   │   │   │           │           │   ├── CameraCapture$2.dex
+│   │   │   │   │           │           │   ├── CameraCapture$3.dex
+│   │   │   │   │           │           │   ├── CameraCapture.dex
+│   │   │   │   │           │           │   ├── CameraFacing.dex
+│   │   │   │   │           │           │   ├── CaptureReset.dex
+│   │   │   │   │           │           │   ├── DisplaySizeMonitor$1.dex
+│   │   │   │   │           │           │   ├── DisplaySizeMonitor$Listener.dex
+│   │   │   │   │           │           │   ├── DisplaySizeMonitor.dex
+│   │   │   │   │           │           │   ├── NewDisplayCapture.dex
+│   │   │   │   │           │           │   ├── ScreenCapture.dex
+│   │   │   │   │           │           │   ├── SurfaceCapture$CaptureListener.dex
+│   │   │   │   │           │           │   ├── SurfaceCapture.dex
+│   │   │   │   │           │           │   ├── SurfaceEncoder.dex
+│   │   │   │   │           │           │   ├── VideoCodec.dex
+│   │   │   │   │           │           │   ├── VideoFilter.dex
+│   │   │   │   │           │           │   ├── VideoSource.dex
+│   │   │   │   │           │           │   └── VirtualDisplayListener.dex
+│   │   │   │   │           │           ├── Workarounds.dex
+│   │   │   │   │           │           └── wrappers
+│   │   │   │   │           │               ├── ActivityManager.dex
+│   │   │   │   │           │               ├── ClipboardManager.dex
+│   │   │   │   │           │               ├── ContentProvider.dex
+│   │   │   │   │           │               ├── DisplayControl.dex
+│   │   │   │   │           │               ├── DisplayManager$1.dex
+│   │   │   │   │           │               ├── DisplayManager$DisplayListener.dex
+│   │   │   │   │           │               ├── DisplayManager$DisplayListenerHandle.dex
+│   │   │   │   │           │               ├── DisplayManager.dex
+│   │   │   │   │           │               ├── DisplayWindowListener.dex
+│   │   │   │   │           │               ├── InputManager.dex
+│   │   │   │   │           │               ├── PowerManager.dex
+│   │   │   │   │           │               ├── ServiceManager.dex
+│   │   │   │   │           │               ├── StatusBarManager.dex
+│   │   │   │   │           │               ├── SurfaceControl.dex
+│   │   │   │   │           │               └── WindowManager.dex
+│   │   │   │   │           └── ebc985bb21b7161295fbb0fe75c2187774d97f77d85a16eed505e306ad54eb79_0.jar
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   │               ├── 4d8da3e25765879b1ea448ec784b6e2ad71b565b6cae50d951166b78dfe1fa69_5.jar
+│   │   │   │               └── com
+│   │   │   │                   └── genymobile
+│   │   │   │                       └── scrcpy
+│   │   │   │                           └── test
+│   │   │   │                               └── BuildConfig.dex
+│   │   │   ├── runtime_app_classes_jar
+│   │   │   │   ├── debug
+│   │   │   │   │   └── bundleDebugClassesToRuntimeJar
+│   │   │   │   │       └── classes.jar
+│   │   │   │   └── release
+│   │   │   │       └── bundleReleaseClassesToRuntimeJar
+│   │   │   │           └── classes.jar
+│   │   │   ├── runtime_symbol_list
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   │       └── R.txt
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestResources
+│   │   │   │   │       └── R.txt
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── R.txt
+│   │   │   ├── signing_config_versions
+│   │   │   │   ├── debug
+│   │   │   │   │   └── writeDebugSigningConfigVersions
+│   │   │   │   │       └── signing-config-versions.json
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── writeDebugAndroidTestSigningConfigVersions
+│   │   │   │           └── signing-config-versions.json
+│   │   │   ├── source_set_path_map
+│   │   │   │   ├── debug
+│   │   │   │   │   └── mapDebugSourceSetPaths
+│   │   │   │   │       └── file-map.txt
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── mapDebugAndroidTestSourceSetPaths
+│   │   │   │   │       └── file-map.txt
+│   │   │   │   └── release
+│   │   │   │       └── mapReleaseSourceSetPaths
+│   │   │   │           └── file-map.txt
+│   │   │   ├── stable_resource_ids_file
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   │       └── stableIds.txt
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestResources
+│   │   │   │   │       └── stableIds.txt
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   │           └── stableIds.txt
+│   │   │   ├── sub_project_dex_archive
+│   │   │   │   ├── debug
+│   │   │   │   │   └── dexBuilderDebug
+│   │   │   │   │       └── out
+│   │   │   │   └── debugAndroidTest
+│   │   │   │       └── dexBuilderDebugAndroidTest
+│   │   │   │           └── out
+│   │   │   ├── symbol_list_with_package_name
+│   │   │   │   ├── debug
+│   │   │   │   │   └── processDebugResources
+│   │   │   │   ├── debugAndroidTest
+│   │   │   │   │   └── processDebugAndroidTestResources
+│   │   │   │   └── release
+│   │   │   │       └── processReleaseResources
+│   │   │   ├── tmp
+│   │   │   │   └── manifest
+│   │   │   │       └── androidTest
+│   │   │   │           └── debug
+│   │   │   ├── unit_test_lint_model
+│   │   │   │   └── debug
+│   │   │   │       └── generateDebugUnitTestLintModel
+│   │   │   │           ├── debug-artifact-dependencies.xml
+│   │   │   │           ├── debug-artifact-libraries.xml
+│   │   │   │           ├── debug.xml
+│   │   │   │           └── module.xml
+│   │   │   ├── unit_test_lint_partial_results
+│   │   │   │   └── debug
+│   │   │   │       └── lintAnalyzeDebugUnitTest
+│   │   │   │           └── out
+│   │   │   │               └── lint-partial.xml
+│   │   │   └── validate_signing_config
+│   │   │       ├── debug
+│   │   │       │   └── validateSigningDebug
+│   │   │       └── debugAndroidTest
+│   │   │           └── validateSigningDebugAndroidTest
+│   │   ├── outputs
+│   │   │   ├── apk
+│   │   │   │   ├── androidTest
+│   │   │   │   │   └── debug
+│   │   │   │   │       ├── output-metadata.json
+│   │   │   │   │       └── server-debug-androidTest.apk
+│   │   │   │   └── debug
+│   │   │   │       ├── output-metadata.json
+│   │   │   │       └── server-debug.apk
+│   │   │   └── logs
+│   │   │       ├── manifest-merger-debug-report.txt
+│   │   │       └── manifest-merger-release-report.txt
+│   │   ├── reports
+│   │   │   ├── checkstyle
+│   │   │   │   ├── checkstyle.html
+│   │   │   │   └── checkstyle.xml
+│   │   │   ├── lint-results-debug.html
+│   │   │   ├── lint-results-debug.txt
+│   │   │   ├── lint-results-debug.xml
+│   │   │   └── tests
+│   │   │       ├── testDebugUnitTest
+│   │   │       │   ├── classes
+│   │   │       │   │   ├── com.genymobile.scrcpy.control.ControlMessageReaderTest.html
+│   │   │       │   │   ├── com.genymobile.scrcpy.control.DeviceMessageWriterTest.html
+│   │   │       │   │   ├── com.genymobile.scrcpy.util.BinaryTest.html
+│   │   │       │   │   ├── com.genymobile.scrcpy.util.CodecOptionsTest.html
+│   │   │       │   │   ├── com.genymobile.scrcpy.util.CommandParserTest.html
+│   │   │       │   │   └── com.genymobile.scrcpy.util.StringUtilsTest.html
+│   │   │       │   ├── css
+│   │   │       │   │   ├── base-style.css
+│   │   │       │   │   └── style.css
+│   │   │       │   ├── index.html
+│   │   │       │   ├── js
+│   │   │       │   │   └── report.js
+│   │   │       │   └── packages
+│   │   │       │       ├── com.genymobile.scrcpy.control.html
+│   │   │       │       └── com.genymobile.scrcpy.util.html
+│   │   │       └── testReleaseUnitTest
+│   │   │           ├── classes
+│   │   │           │   ├── com.genymobile.scrcpy.control.ControlMessageReaderTest.html
+│   │   │           │   ├── com.genymobile.scrcpy.control.DeviceMessageWriterTest.html
+│   │   │           │   ├── com.genymobile.scrcpy.util.BinaryTest.html
+│   │   │           │   ├── com.genymobile.scrcpy.util.CodecOptionsTest.html
+│   │   │           │   ├── com.genymobile.scrcpy.util.CommandParserTest.html
+│   │   │           │   └── com.genymobile.scrcpy.util.StringUtilsTest.html
+│   │   │           ├── css
+│   │   │           │   ├── base-style.css
+│   │   │           │   └── style.css
+│   │   │           ├── index.html
+│   │   │           ├── js
+│   │   │           │   └── report.js
+│   │   │           └── packages
+│   │   │               ├── com.genymobile.scrcpy.control.html
+│   │   │               └── com.genymobile.scrcpy.util.html
+│   │   ├── test-results
+│   │   │   ├── testDebugUnitTest
+│   │   │   │   ├── binary
+│   │   │   │   │   ├── output.bin
+│   │   │   │   │   ├── output.bin.idx
+│   │   │   │   │   └── results.bin
+│   │   │   │   ├── TEST-com.genymobile.scrcpy.control.ControlMessageReaderTest.xml
+│   │   │   │   ├── TEST-com.genymobile.scrcpy.control.DeviceMessageWriterTest.xml
+│   │   │   │   ├── TEST-com.genymobile.scrcpy.util.BinaryTest.xml
+│   │   │   │   ├── TEST-com.genymobile.scrcpy.util.CodecOptionsTest.xml
+│   │   │   │   ├── TEST-com.genymobile.scrcpy.util.CommandParserTest.xml
+│   │   │   │   └── TEST-com.genymobile.scrcpy.util.StringUtilsTest.xml
+│   │   │   └── testReleaseUnitTest
+│   │   │       ├── binary
+│   │   │       │   ├── output.bin
+│   │   │       │   ├── output.bin.idx
+│   │   │       │   └── results.bin
+│   │   │       ├── TEST-com.genymobile.scrcpy.control.ControlMessageReaderTest.xml
+│   │   │       ├── TEST-com.genymobile.scrcpy.control.DeviceMessageWriterTest.xml
+│   │   │       ├── TEST-com.genymobile.scrcpy.util.BinaryTest.xml
+│   │   │       ├── TEST-com.genymobile.scrcpy.util.CodecOptionsTest.xml
+│   │   │       ├── TEST-com.genymobile.scrcpy.util.CommandParserTest.xml
+│   │   │       └── TEST-com.genymobile.scrcpy.util.StringUtilsTest.xml
+│   │   └── tmp
+│   │       ├── checkstyle
+│   │       ├── compileDebugAndroidTestJavaWithJavac
+│   │       │   └── previous-compilation-data.bin
+│   │       ├── compileDebugJavaWithJavac
+│   │       │   └── previous-compilation-data.bin
+│   │       ├── compileDebugUnitTestJavaWithJavac
+│   │       │   └── previous-compilation-data.bin
+│   │       ├── compileReleaseJavaWithJavac
+│   │       │   └── previous-compilation-data.bin
+│   │       ├── compileReleaseUnitTestJavaWithJavac
+│   │       │   └── previous-compilation-data.bin
+│   │       ├── testDebugUnitTest
+│   │       └── testReleaseUnitTest
+│   ├── build.gradle
+│   ├── build_without_gradle.sh
+│   ├── meson.build
+│   ├── proguard-rules.pro
+│   ├── scripts
+│   │   └── build-wrapper.sh
+│   └── src
+│       ├── main
+│       │   ├── aidl
+│       │   │   └── android
+│       │   │       ├── content
+│       │   │       │   └── IOnPrimaryClipChangedListener.aidl
+│       │   │       └── view
+│       │   │           ├── IDisplayFoldListener.aidl
+│       │   │           ├── IDisplayWindowListener.aidl
+│       │   │           └── IRotationWatcher.aidl
+│       │   ├── AndroidManifest.xml
+│       │   └── java
+│       │       ├── android
+│       │       │   └── content
+│       │       │       └── IContentProvider.java
+│       │       └── com
+│       │           └── genymobile
+│       │               └── scrcpy
+│       │                   ├── AndroidVersions.java
+│       │                   ├── AsyncProcessor.java
+│       │                   ├── audio
+│       │                   │   ├── AudioCaptureException.java
+│       │                   │   ├── AudioCapture.java
+│       │                   │   ├── AudioCodec.java
+│       │                   │   ├── AudioConfig.java
+│       │                   │   ├── AudioDirectCapture.java
+│       │                   │   ├── AudioEncoder.java
+│       │                   │   ├── AudioPlaybackCapture.java
+│       │                   │   ├── AudioRawRecorder.java
+│       │                   │   ├── AudioRecordReader.java
+│       │                   │   └── AudioSource.java
+│       │                   ├── CleanUp.java
+│       │                   ├── control
+│       │                   │   ├── ControlChannel.java
+│       │                   │   ├── Controller.java
+│       │                   │   ├── ControlMessage.java
+│       │                   │   ├── ControlMessageReader.java
+│       │                   │   ├── ControlProtocolException.java
+│       │                   │   ├── DeviceMessage.java
+│       │                   │   ├── DeviceMessageSender.java
+│       │                   │   ├── DeviceMessageWriter.java
+│       │                   │   ├── KeyComposition.java
+│       │                   │   ├── Pointer.java
+│       │                   │   ├── PointersState.java
+│       │                   │   ├── PositionMapper.java
+│       │                   │   └── UhidManager.java
+│       │                   ├── device
+│       │                   │   ├── ConfigurationException.java
+│       │                   │   ├── DesktopConnection.java
+│       │                   │   ├── DeviceApp.java
+│       │                   │   ├── Device.java
+│       │                   │   ├── DisplayInfo.java
+│       │                   │   ├── NewDisplay.java
+│       │                   │   ├── Orientation.java
+│       │                   │   ├── Point.java
+│       │                   │   ├── Position.java
+│       │                   │   ├── Size.java
+│       │                   │   └── Streamer.java
+│       │                   ├── FakeContext.java
+│       │                   ├── opengl
+│       │                   │   ├── AffineOpenGLFilter.java
+│       │                   │   ├── GLUtils.java
+│       │                   │   ├── OpenGLException.java
+│       │                   │   ├── OpenGLFilter.java
+│       │                   │   └── OpenGLRunner.java
+│       │                   ├── Options.java
+│       │                   ├── Server.java
+│       │                   ├── util
+│       │                   │   ├── AffineMatrix.java
+│       │                   │   ├── Binary.java
+│       │                   │   ├── Codec.java
+│       │                   │   ├── CodecOption.java
+│       │                   │   ├── CodecUtils.java
+│       │                   │   ├── Command.java
+│       │                   │   ├── HandlerExecutor.java
+│       │                   │   ├── IO.java
+│       │                   │   ├── Ln.java
+│       │                   │   ├── LogUtils.java
+│       │                   │   ├── SettingsException.java
+│       │                   │   ├── Settings.java
+│       │                   │   └── StringUtils.java
+│       │                   ├── video
+│       │                   │   ├── CameraAspectRatio.java
+│       │                   │   ├── CameraCapture.java
+│       │                   │   ├── CameraFacing.java
+│       │                   │   ├── CaptureReset.java
+│       │                   │   ├── DisplaySizeMonitor.java
+│       │                   │   ├── NewDisplayCapture.java
+│       │                   │   ├── ScreenCapture.java
+│       │                   │   ├── SurfaceCapture.java
+│       │                   │   ├── SurfaceEncoder.java
+│       │                   │   ├── VideoCodec.java
+│       │                   │   ├── VideoFilter.java
+│       │                   │   ├── VideoSource.java
+│       │                   │   └── VirtualDisplayListener.java
+│       │                   ├── Workarounds.java
+│       │                   └── wrappers
+│       │                       ├── ActivityManager.java
+│       │                       ├── ClipboardManager.java
+│       │                       ├── ContentProvider.java
+│       │                       ├── DisplayControl.java
+│       │                       ├── DisplayManager.java
+│       │                       ├── DisplayWindowListener.java
+│       │                       ├── InputManager.java
+│       │                       ├── PowerManager.java
+│       │                       ├── ServiceManager.java
+│       │                       ├── StatusBarManager.java
+│       │                       ├── SurfaceControl.java
+│       │                       └── WindowManager.java
+│       └── test
+│           └── java
+│               └── com
+│                   └── genymobile
+│                       └── scrcpy
+│                           ├── control
+│                           │   ├── ControlMessageReaderTest.java
+│                           │   └── DeviceMessageWriterTest.java
+│                           └── util
+│                               ├── BinaryTest.java
+│                               ├── CodecOptionsTest.java
+│                               ├── CommandParserTest.java
+│                               └── StringUtilsTest.java
+└── settings.gradle
+
+660 directories, 978 files
